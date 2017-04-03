@@ -1,0 +1,12 @@
+.div-imagem {
+    margin: .67em 0;
+}
+.thumbnail-imagem{
+    width: 200px;
+    height: 230px;
+}
+.imagem{
+    width: 195px;
+    height: 220px;
+    background-color: grey;
+}

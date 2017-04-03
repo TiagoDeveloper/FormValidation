@@ -38,4 +38,17 @@ export class FormularioComponent implements OnInit {
           this.renderer.setElementStyle(this.renderer.selectRootElement('#'+attr), 'border-color', color);
     }
 
+
+    rendererImage(event){      
+      let file: File = event.target.files[0];
+      let reader: FileReader = new FileReader();
+      let image = this.renderer.selectRootElement('#image');
+
+      reader.onload = e => {
+        let src = reader.result;
+        image.src = src;
+      };
+      reader.readAsDataURL(file);
+  }
+
 }
