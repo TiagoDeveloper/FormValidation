@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer } from '@angular/core';
+import { Component, OnInit, Renderer, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 
 
@@ -11,6 +11,8 @@ export class FormularioComponent implements OnInit {
 
   pessoa: FormGroup;
   attr: any;
+  
+  //@ViewChild('image') image: ElementRef;
   
   constructor( private fb: FormBuilder, private renderer: Renderer ) { }
 
@@ -49,6 +51,18 @@ export class FormularioComponent implements OnInit {
         image.src = src;
       };
       reader.readAsDataURL(file);
+      
+      /* 
+      this.file = event.target.files[0];
+      let reader: FileReader = new FileReader();
+
+      reader.onload = e => {
+        let src = reader.result;
+        this.renderer.setElementProperty(this.image.nativeElement, 'src', src);
+      };
+       reader.readAsDataURL(this.file);
+      
+      */
   }
 
 }
